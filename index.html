@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skaria Tours & Travels</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#fffaf5;
+      color:#2b2b2b;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1180px;
+      margin:auto;
+    }
+
+    /* =========================
+       TOPBAR
+    ========================== */
+
+    .topbar{
+      background:#4a0d1a;
+      color:#fff;
+      padding:9px 0;
+      font-size:13px;
+    }
+
+    .topbar-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .top-left{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .top-left span{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .social-icons{
+      display:flex;
+      gap:15px;
+    }
+
+    .social-icons a{
+      color:#fff;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      color:#c89b3c;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    nav{
+      background:#fffaf5;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 12px rgba(74,13,26,0.12);
+    }
+
+    .nav-wrapper{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:8px 0;
+      position:relative;
+    }
+
+    .logo img{
+      width:80px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#4a0d1a;
+      font-size:14px;
+      font-weight:600;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0;
+      height:2px;
+      background:#c89b3c;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      display:inline-block;
+      background:linear-gradient(135deg,#7a1128,#c89b3c);
+      color:#fff;
+      padding:12px 24px;
+      border-radius:50px;
+      font-size:14px;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 22px rgba(122,17,40,0.3);
+    }
+
+    .menu-btn{
+      display:none;
+      background:none;
+      border:none;
+      font-size:26px;
+      color:#4a0d1a;
+      cursor:pointer;
+    }
+
+    /* =========================
+       HERO SLIDESHOW
+    ========================== */
+
+    .hero{
+      position:relative;
+      min-height:92vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      color:#fff;
+    }
+
+    .slide{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transform:scale(1.08);
+      transition:opacity 1.2s ease, transform 5s ease;
+    }
+
+    .slide.active{
+      opacity:1;
+      transform:scale(1);
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(rgba(38,8,15,0.72),rgba(38,8,15,0.72));
+      z-index:1;
+    }
+
+    .hero-container{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-content{
+      max-width:760px;
+    }
+
+    .hero h1{
+      font-size:68px;
+      line-height:1.1;
+      margin-bottom:22px;
+      font-weight:800;
+    }
+
+    .hero p{
+      color:#f5e6d3;
+      font-size:20px;
+      line-height:1.8;
+      margin-bottom:32px;
+      font-style:italic;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    .section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:55px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#4a0d1a;
+      margin-bottom:12px;
+    }
+
+    .line{
+      width:75px;
+      height:4px;
+      background:#c89b3c;
+      margin:auto;
+      border-radius:10px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-content{
+      max-width:900px;
+      text-align:center;
+      margin:auto;
+    }
+
+    .about-content p{
+      color:#5e4a42;
+      line-height:2;
+      font-size:16px;
+      margin-bottom:28px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .service-card{
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 12px 30px rgba(74,13,26,0.1);
+      transition:0.35s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-9px);
+    }
+
+    .service-card img{
+      height:235px;
+      object-fit:cover;
+    }
+
+    .service-content{
+      padding:28px;
+      text-align:center;
+    }
+
+    .service-content h3{
+      color:#4a0d1a;
+      margin-bottom:14px;
+      font-size:22px;
+    }
+
+    .service-content p{
+      color:#6b5c56;
+      line-height:1.8;
+      margin-bottom:22px;
+      font-size:15px;
+    }
+
+    /* =========================
+       WHY CHOOSE
+    ========================== */
+
+    .why{
+      background:#f9efe5;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+    }
+
+    .feature-box{
+      background:#fff;
+      padding:32px 24px;
+      border-radius:16px;
+      text-align:center;
+      box-shadow:0 8px 22px rgba(74,13,26,0.08);
+    }
+
+    .feature-box i{
+      font-size:38px;
+      color:#c89b3c;
+      margin-bottom:18px;
+    }
+
+    .feature-box h3{
+      color:#4a0d1a;
+      margin-bottom:12px;
+      font-size:19px;
+    }
+
+    .feature-box p{
+      color:#6b5c56;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    /* =========================
+       PACKAGE SECTION
+    ========================== */
+
+    .explore{
+      color:#fff;
+      background:
+      linear-gradient(rgba(38,8,15,0.7),rgba(38,8,15,0.7)),
+      url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .explore-content{
+      max-width:700px;
+    }
+
+    .explore h2{
+      font-size:46px;
+      margin-bottom:20px;
+    }
+
+    .explore p{
+      color:#f5e6d3;
+      line-height:1.9;
+      margin-bottom:28px;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================== */
+
+    .testimonials{
+      background:#4a0d1a;
+      color:#fff;
+    }
+
+    .testimonials .section-title h2{
+      color:#fff;
+    }
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+    }
+
+    .testimonial{
+      background:#fff7ef;
+      color:#2b2b2b;
+      padding:32px;
+      border-radius:18px;
+      transition:0.3s;
+    }
+
+    .testimonial:hover{
+      transform:translateY(-8px);
+    }
+
+    .testimonial i{
+      color:#c89b3c;
+      font-size:30px;
+      margin-bottom:18px;
+    }
+
+    .testimonial p{
+      color:#5e4a42;
+      line-height:1.8;
+      margin-bottom:22px;
+      font-size:15px;
+    }
+
+    .testimonial h4{
+      color:#4a0d1a;
+      margin-bottom:4px;
+    }
+
+    .testimonial span{
+      color:#8a6f63;
+      font-size:13px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact{
+      background:#fffaf5;
+    }
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .contact-info h3{
+      color:#4a0d1a;
+      font-size:34px;
+      margin-bottom:18px;
+    }
+
+    .contact-info p{
+      color:#5e4a42;
+      line-height:1.8;
+      margin-bottom:14px;
+    }
+
+    .contact-info i{
+      color:#c89b3c;
+      margin-right:10px;
+    }
+
+    .contact-form{
+      background:#fff;
+      padding:38px;
+      border-radius:20px;
+      box-shadow:0 12px 30px rgba(74,13,26,0.1);
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      border:none;
+      outline:none;
+      background:#f8f1ea;
+      padding:15px;
+      border-radius:12px;
+      margin-bottom:16px;
+      font-family:'Poppins',sans-serif;
+      color:#4a0d1a;
+    }
+
+    .contact-form textarea{
+      height:130px;
+      resize:none;
+    }
+
+    /* =========================
+       WHATSAPP BUTTON
+    ========================== */
+
+    .whatsapp-float{
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      color:#fff;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      z-index:9999;
+      box-shadow:0 8px 25px rgba(0,0,0,0.25);
+      transition:0.3s;
+    }
+
+    .whatsapp-float:hover{
+      transform:scale(1.1);
+      background:#1ebe5d;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      background:#2b0710;
+      color:#e7d5c7;
+      text-align:center;
+      padding:28px 15px;
+      font-size:14px;
+    }
+
+    footer p{
+      margin:6px 0;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:992px){
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .services-grid,
+      .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .features-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#fffaf5;
+        flex-direction:column;
+        align-items:center;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:0.35s ease;
+      }
+
+      .nav-links.active{
+        max-height:350px;
+        padding:10px 0;
+      }
+
+      .nav-links a{
+        width:100%;
+        text-align:center;
+        padding:15px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .desktop-book{
+        display:none;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-content{
+        margin:auto;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .section{
+        padding:70px 0;
+      }
+
+      .section-title h2{
+        font-size:32px;
+      }
+
+      .services-grid,
+      .features-grid,
+      .testimonial-grid,
+      .contact-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .topbar-wrapper{
+        justify-content:center;
+      }
+
+      .top-left{
+        justify-content:center;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .hero h1{
+        font-size:30px;
+      }
+
+      .logo img{
+        width:68px;
+      }
+
+      .btn{
+        padding:11px 20px;
+        font-size:13px;
+      }
+
+      .contact-form{
+        padding:24px;
+      }
+
+      .whatsapp-float{
+        width:55px;
+        height:55px;
+        font-size:28px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+
+  <div class="topbar">
+    <div class="container topbar-wrapper">
+
+      <div class="top-left">
+        <span><i class="fa-solid fa-envelope"></i> kevinsabu@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> +39 329 544 4806</span>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+      <a href="#home" class="logo">
+        <img src="logo.png" alt="Skaria Tours Logo">
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#explore">Packages</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a href="#contact" class="btn desktop-book">Book Now</a>
+
+      <button class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="slide active"
+      style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1600&auto=format&fit=crop')">
+    </div>
+
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1525874684015-58379d421a52?q=80&w=1600&auto=format&fit=crop')">
+    </div>
+
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1600&auto=format&fit=crop')">
+    </div>
+
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=1600&auto=format&fit=crop')">
+    </div>
+
+    <div class="slide"
+      style="background-image:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1600&auto=format&fit=crop')">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-container">
+
+      <div class="hero-content">
+
+        <h1 id="heroTitle">Explore Europe With Skaria Tours</h1>
+
+        <p id="heroQuote">
+          “Travel makes every journey a beautiful memory.”
+        </p>
+
+        <a href="#services" class="btn">Explore Tours</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section" id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Us</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="about-content">
+        <p>
+          Skaria Tours & Travels creates unforgettable travel experiences
+          across Europe with luxury stays, premium services, and customized
+          itineraries crafted specially for you.
+        </p>
+
+        <a href="#contact" class="btn">Plan Your Trip</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="section" id="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="service-content">
+            <h3>Europe Packages</h3>
+
+            <p>
+              Carefully curated luxury European tour packages.
+            </p>
+
+            <a href="#contact" class="btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="service-content">
+            <h3>Hotel Booking</h3>
+
+            <p>
+              Comfortable hotel booking support for all destinations.
+            </p>
+
+            <a href="#contact" class="btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="service-content">
+            <h3>Visa Assistance</h3>
+
+            <p>
+              Smooth visa processing and complete documentation support.
+            </p>
+
+            <a href="#contact" class="btn">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+
+  <section class="section why">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Choose Us</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-box">
+          <i class="fa-solid fa-earth-europe"></i>
+          <h3>Expert Guidance</h3>
+          <p>Professional planning with destination expertise.</p>
+        </div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-route"></i>
+          <h3>Customized Trips</h3>
+          <p>Tailor-made itineraries for your dream vacation.</p>
+        </div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-plane-departure"></i>
+          <h3>Easy Travel</h3>
+          <p>Flights, stays, and sightseeing arranged perfectly.</p>
+        </div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-headset"></i>
+          <h3>24/7 Support</h3>
+          <p>Reliable support throughout your travel journey.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EXPLORE -->
+
+  <section class="section explore" id="explore">
+
+    <div class="container">
+
+      <div class="explore-content">
+
+        <h2>Premium Holiday Packages</h2>
+
+        <p>
+          Discover breathtaking landscapes, iconic destinations, and unforgettable
+          experiences with our luxury European travel packages.
+        </p>
+
+        <a href="#contact" class="btn">Book Your Package</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+
+  <section class="section testimonials" id="reviews">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Happy Travelers</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial">
+          <i class="fa-solid fa-quote-left"></i>
+
+          <p>
+            Excellent arrangements and wonderful travel experience.
+          </p>
+
+          <h4>Nivin Pauly</h4>
+          <span>Traveler</span>
+        </div>
+
+        <div class="testimonial">
+          <i class="fa-solid fa-quote-left"></i>
+
+          <p>
+            Friendly support and memorable moments throughout the trip.
+          </p>
+
+          <h4>Lijo Joseph</h4>
+          <span>Traveler</span>
+        </div>
+
+        <div class="testimonial">
+          <i class="fa-solid fa-quote-left"></i>
+
+          <p>
+            A premium Europe tour experience with luxury and comfort.
+          </p>
+
+          <h4>Susan Mathew</h4>
+          <span>Traveler</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section contact" id="contact">
+
+    <div class="container">
+
+      <div class="contact-wrapper">
+
+        <div class="contact-info">
+
+          <h3>Contact Us</h3>
+
+          <p>
+            Let us help you plan your dream European vacation.
+          </p>
+
+          
+          <p><i class="fa-solid fa-phone"></i> +39 329 544 4806</p>
+
+          <p><i class="fa-solid fa-envelope"></i> kevinsabu@gmail.com</p>
+
+        </div>
+
+        <div class="contact-form">
+
+          <form>
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Preferred Destination" required>
+
+            <textarea placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© 2025 Skaria Tours & Travels</p>
+
+    <p>Premium travel experiences crafted with care.</p>
+
+  </footer>
+
+  <!-- WHATSAPP BUTTON -->
+
+  <a 
+    href="https://wa.me/393295444806" 
+    class="whatsapp-float"
+    target="_blank"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+      if(navLinks.classList.contains("active")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+      }else{
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      }
+
+    });
+
+    /* HERO SLIDESHOW */
+
+    const slides = document.querySelectorAll(".slide");
+
+    const heroTitle = document.getElementById("heroTitle");
+
+    const heroQuote = document.getElementById("heroQuote");
+
+    const heroData = [
+
+      {
+        title:"Explore Europe With Skaria Tours",
+        quote:"“Travel makes every journey a beautiful memory.”"
+      },
+
+      {
+        title:"Luxury Travel Experiences",
+        quote:"“Adventure begins where comfort meets discovery.”"
+      },
+
+      {
+        title:"Discover Timeless Destinations",
+        quote:"“Every destination has a story waiting for you.”"
+      },
+
+      {
+        title:"Create Unforgettable Memories",
+        quote:"“The best journeys become the best memories.”"
+      },
+
+      {
+        title:"Travel Beyond Expectations",
+        quote:"“See the world differently with every journey.”"
+      }
+
+    ];
+
+    let currentSlide = 0;
+
+    function showSlide(index){
+
+      slides.forEach(slide => {
+        slide.classList.remove("active");
+      });
+
+      slides[index].classList.add("active");
+
+      heroTitle.textContent = heroData[index].title;
+
+      heroQuote.textContent = heroData[index].quote;
+
+    }
+
+    setInterval(() => {
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      showSlide(currentSlide);
+
+    }, 4500);
+
+  </script>
+
+</body>
+</html>

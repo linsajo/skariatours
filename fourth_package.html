@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>13N 14D Eastern Europe | Skaria Tours</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f8f2e9;
+      color: #1b2430;
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(5, 20, 44, .96);
+      backdrop-filter: blur(12px);
+      padding: 12px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: white;
+    }
+
+    .brand img {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .brand h2 {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .brand span {
+      color: #d6a84f;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn {
+      background: #d6a84f;
+      color: #05142c;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      display: inline-block;
+    }
+
+    .hero {
+      min-height: 690px;
+      background:
+        linear-gradient(115deg, rgba(5,20,44,.95), rgba(5,20,44,.35)),
+        url("https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 90px 6%;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #d6a84f;
+      color: #05142c;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #f8fafc;
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 46px);
+      color: #05142c;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #667085;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .stat h3 {
+      color: #d6a84f;
+      font-size: 40px;
+    }
+
+    .route-box {
+      margin-top: 40px;
+      background: #05142c;
+      color: white;
+      border-radius: 34px;
+      padding: 40px;
+    }
+
+    .route-box h3 {
+      color: #d6a84f;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .route-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .route-list span {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      max-width: 1180px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 32px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #d6a84f;
+      border-radius: 10px;
+    }
+
+    .day {
+      position: relative;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      margin-bottom: 34px;
+    }
+
+    .dot {
+      width: 66px;
+      height: 66px;
+      background: #05142c;
+      border: 5px solid #d6a84f;
+      border-radius: 50%;
+      color: white;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .day-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .day-head {
+      background: linear-gradient(135deg, #05142c, #12376d);
+      color: white;
+      padding: 28px 32px;
+    }
+
+    .day-head span {
+      color: #d6a84f;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .day-head h3 {
+      font-size: 28px;
+      margin-top: 6px;
+    }
+
+    .day-body {
+      padding: 30px;
+    }
+
+    .places {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .place {
+      background: #fffaf3;
+      border: 1px solid #efd7ad;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+
+
+    .place.featured {
+      border-color: #d6a84f;
+    }
+
+    .place.text-only {
+      padding: 4px;
+      background: linear-gradient(180deg, #fffaf3, #ffffff);
+    }
+
+    .place.text-only .place-content {
+      padding: 24px;
+    }
+
+    .place.text-only h4::before {
+      content: "✦ ";
+      color: #d6a84f;
+    }
+
+    .place:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.12);
+    }
+
+    .place img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .place-content {
+      padding: 20px;
+    }
+
+    .place-content h4 {
+      font-size: 20px;
+      color: #05142c;
+      margin-bottom: 8px;
+    }
+
+    .place-content p {
+      color: #536174;
+      font-size: 15px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .info-box h3 {
+      color: #05142c;
+      margin-bottom: 16px;
+      font-size: 25px;
+    }
+
+    .info-box ul {
+      padding-left: 20px;
+      color: #536174;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #05142c, #12376d);
+      color: white;
+      text-align: center;
+      border-radius: 36px;
+      padding: 70px 25px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #dbeafe;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: #05142c;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 28px;
+    }
+
+    @media(max-width: 950px) {
+      nav { display: none; }
+      .stats, .places, .info-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media(max-width: 650px) {
+      .stats, .places, .info-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 5%; }
+      .timeline::before { left: 25px; }
+      .day { grid-template-columns: 62px 1fr; }
+      .dot { width: 52px; height: 52px; font-size: 13px; }
+      .brand img { width: 58px; height: 58px; }
+      .hero { min-height: 570px; }
+    }
+  
+
+    /* Updated common topbar + navbar */
+    .topbar{
+      background:#06433f;
+      color:#fff;
+      padding:9px 0;
+      font-size:14px;
+    }
+
+    .topbar-inner,
+    .nav-inner{
+      width:90%;
+      max-width:1180px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .topbar-contact{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      flex-wrap:wrap;
+      font-weight:600;
+    }
+
+    .topbar-contact i,
+    .topbar-social a{
+      color:#f5a400;
+    }
+
+    .topbar-social{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .topbar-social a{
+      font-size:15px;
+      text-decoration:none;
+    }
+
+    header.site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#ffffff;
+      padding:14px 0;
+      box-shadow:0 8px 24px rgba(6,67,63,.12);
+      backdrop-filter:none;
+    }
+
+    .site-logo img{
+      width:86px;
+      height:86px;
+      object-fit:contain;
+      background:transparent;
+      border-radius:0;
+      padding:0;
+      display:block;
+    }
+
+    .site-menu{
+      display:flex;
+      align-items:center;
+      gap:30px;
+    }
+
+    .site-menu a{
+      color:#073f3c;
+      text-decoration:none;
+      margin:0;
+      font-weight:800;
+      font-size:16px;
+      transition:.25s ease;
+    }
+
+    .site-menu a:hover{
+      color:#f5a400;
+    }
+
+    .book-btn{
+      background:linear-gradient(135deg,#2eb872,#d6b33f);
+      color:#ffffff !important;
+      padding:15px 32px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 10px 24px rgba(46,184,114,.22);
+    }
+
+    @media(max-width:950px){
+      .topbar-inner,
+      .nav-inner{
+        width:92%;
+      }
+
+      .site-menu{
+        display:flex !important;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:16px 22px;
+      }
+
+      .nav-inner{
+        flex-direction:column;
+      }
+    }
+
+    @media(max-width:650px){
+      .topbar-inner{
+        justify-content:center;
+        text-align:center;
+      }
+
+      .topbar-contact{
+        justify-content:center;
+        gap:10px 18px;
+      }
+
+      .site-logo img{
+        width:72px;
+        height:72px;
+      }
+
+      .site-menu a{
+        font-size:14px;
+      }
+
+      .book-btn{
+        padding:12px 24px;
+      }
+    }
+
+  
+    /* Fully responsive navbar update */
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      background:linear-gradient(135deg,#2eb872,#d6b33f);
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 22px rgba(46,184,114,.25);
+    }
+
+    .desktop-book{
+      white-space:nowrap;
+    }
+
+    @media(max-width:1100px){
+      .site-menu{
+        gap:20px;
+      }
+
+      .site-menu a{
+        font-size:15px;
+      }
+
+      .book-btn{
+        padding:13px 24px;
+      }
+    }
+
+    @media(max-width:900px){
+      header.site-header{
+        padding:10px 0;
+      }
+
+      .nav-inner{
+        width:92%;
+        flex-direction:row;
+        position:relative;
+      }
+
+      .site-logo img{
+        width:74px;
+        height:74px;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .desktop-book{
+        display:none;
+      }
+
+      .site-menu{
+        position:absolute;
+        top:calc(100% + 10px);
+        left:0;
+        right:0;
+        display:none !important;
+        grid-template-columns:1fr;
+        gap:0;
+        background:#ffffff;
+        border-radius:22px;
+        padding:12px;
+        box-shadow:0 18px 45px rgba(6,67,63,.18);
+        border:1px solid rgba(6,67,63,.08);
+        z-index:1001;
+      }
+
+      .site-menu.active{
+        display:grid !important;
+      }
+
+      .site-menu a{
+        color:#073f3c;
+        width:100%;
+        padding:14px 16px;
+        border-radius:14px;
+        text-align:center;
+        font-size:15px;
+      }
+
+      .site-menu a:hover{
+        background:#f4fbf8;
+      }
+
+      .site-menu::after{
+        content:"Book Now";
+        display:block;
+        background:linear-gradient(135deg,#2eb872,#d6b33f);
+        color:#fff;
+        text-align:center;
+        padding:14px 16px;
+        border-radius:999px;
+        font-weight:900;
+        margin-top:8px;
+      }
+
+      .topbar{
+        font-size:13px;
+      }
+
+      .topbar-inner{
+        flex-direction:column;
+        justify-content:center;
+        gap:8px;
+      }
+
+      .topbar-contact{
+        justify-content:center;
+        gap:8px 18px;
+      }
+    }
+
+    @media(max-width:650px){
+      .hero{
+        min-height:460px;
+        padding:70px 5%;
+        text-align:center;
+      }
+
+      .hero-content{
+        margin:auto;
+      }
+
+      .hero h1{
+        font-size:34px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .topbar-contact{
+        flex-direction:column;
+        gap:4px;
+      }
+
+      .topbar-social{
+        gap:14px;
+      }
+
+      .timeline::before{
+        display:none;
+      }
+
+      .day{
+        grid-template-columns:1fr;
+      }
+
+      .dot{
+        margin:0 auto -10px;
+      }
+
+      .day-card{
+        border-radius:24px;
+      }
+
+      .day-head{
+        padding:22px;
+        text-align:center;
+      }
+
+      .day-head h3{
+        font-size:23px;
+      }
+
+      .day-body{
+        padding:18px;
+      }
+
+      .place-content,
+      .place.text-only .place-content{
+        padding:18px;
+      }
+
+      .route-box,
+      .cta{
+        border-radius:24px;
+        padding:30px 20px;
+      }
+
+      .info-box{
+        padding:24px;
+      }
+    }
+
+    @media(max-width:420px){
+      .site-logo img{
+        width:64px;
+        height:64px;
+      }
+
+      .menu-toggle{
+        width:42px;
+        height:42px;
+        font-size:18px;
+      }
+
+      .hero h1{
+        font-size:29px;
+      }
+
+      .badge{
+        font-size:13px;
+      }
+
+      .section-title h2{
+        font-size:28px;
+      }
+
+      .stat{
+        padding:24px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-contact">
+      <span><i class="fa-solid fa-envelope"></i> kevinsabu@gmail.com</span>
+      <span><i class="fa-solid fa-phone"></i> +39 329 544 4806</span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fa-brands fa-square-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="site-logo">
+      <img alt="Skaria Tours and Travels Logo" src="logo.png"/>
+    </a>
+
+    <nav class="site-menu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="packages.html">Tour Packages</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <a class="book-btn desktop-book" href="index.html#contact">Book Now</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<span class="badge">13 Nights / 14 Days</span>
+<h1>Eastern Europe Grand Tour</h1>
+<p>
+      Explore Italy, Albania, Macedonia, Bulgaria, Romania, Hungary and Slovenia
+      through historic cities, castles, caves, churches and scenic landscapes.
+    </p>
+<a class="btn" href="#itinerary">Explore Itinerary</a>
+</div>
+</section>
+<section id="overview">
+<div class="section-title">
+<h2>Tour Overview</h2>
+<p>A rich Eastern Europe journey from Napoli and Bari to Albania, Macedonia, Bulgaria, Romania, Hungary, Slovenia and Venice.</p>
+</div>
+<div class="stats">
+<div class="stat"><h3>14</h3><p>Days</p></div>
+<div class="stat"><h3>13</h3><p>Nights</p></div>
+<div class="stat"><h3>7</h3><p>Countries</p></div>
+<div class="stat"><h3>35+</h3><p>Highlights</p></div>
+</div>
+<div class="route-box">
+<h3>Route Highlights</h3>
+<div class="route-list">
+<span>Napoli</span><span>Bari</span><span>Durrës</span><span>Tirana</span>
+<span>Struga</span><span>Skopje</span><span>Sofia</span><span>Bucharest</span>
+<span>Transylvania</span><span>Brașov</span><span>Cluj-Napoca</span>
+<span>Budapest</span><span>Ljubljana</span><span>Postojna</span><span>Venice</span>
+</div>
+</div>
+</section>
+<section id="itinerary">
+<div class="section-title">
+<h2>Day Wise Itinerary</h2>
+<p>Important highlights include image cards, while supporting stops are presented as detailed text cards for a cleaner and more premium itinerary.</p>
+</div>
+<div class="timeline">
+<div class="day">
+<div class="dot">01</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 01</span><h3>Napoli, Italy to Bari</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Napoli Arrival</h4><p>Arrive at Napoli airport, meet the tour representative and begin the scenic drive towards Bari. The day is planned as a smooth arrival and transfer day, giving guests time to settle in before the overnight ferry journey.</p></div></div>
+<div class="place featured"><img src="img/1e5ff0f579dfa806c6995bf76bb44f66-bari.avif"/><div class="place-content"><h4>Bari to Albania Ferry</h4><p>Board the overnight cruise ferry from Bari to Durrës. This Adriatic Sea crossing gives the group a relaxed travel experience, with time to rest before beginning the Balkan sightseeing route in Albania.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">02</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 02</span><h3>Durrës to Struga, Macedonia</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/Skanderbeg-Square-Tirana (1).jpg"/><div class="place-content"><h4>Skanderbeg Square, Tirana</h4><p>Visit Tirana’s central landmark, named after Albania’s national hero Gjergj Kastrioti Skënderbeu. The square is surrounded by important civic buildings, museums and open public spaces that introduce the capital’s history and modern culture.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Struga Overnight</h4><p>Continue towards Struga, a calm lakeside town near Lake Ohrid. This stop is ideal for an overnight break after the Albania route and prepares the group for the next day’s journey to Skopje.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">03</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 03</span><h3>Struga to Skopje</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Skopje City</h4><p>Explore Skopje, the capital of North Macedonia, where Roman, Byzantine and Ottoman influences meet modern city squares and monuments. The city offers a mix of historic lanes, riverside views and lively public spaces.</p></div></div>
+<div class="place featured"><img src="img/Memorial-House-of-Mother-Teresa (1).jpg"/><div class="place-content"><h4>Memorial House of Mother Teresa</h4><p>Visit the memorial dedicated to Mother Teresa, who was born in Skopje. The site presents her life, humanitarian work and spiritual legacy through exhibits, photographs and a peaceful chapel atmosphere.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>The Stone Bridge</h4><p>See the Stone Bridge across the Vardar River, one of Skopje’s most recognized landmarks. It links the old and new parts of the city and offers a memorable photo stop during the city orientation.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">04</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 04</span><h3>Skopje, Macedonia</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Mustafa Pasha Mosque</h4><p>An Ottoman-era mosque located near Skopje’s Old Bazaar. Its elegant architecture and elevated setting make it a meaningful optional stop for guests interested in the city’s Islamic heritage.</p></div></div>
+<div class="place featured"><img src="img/The-Millennium-Cross (1).jpg"/><div class="place-content"><h4>The Millennium Cross</h4><p>Visit or view the 66-metre Millennium Cross on Vodno Mountain, built to mark 2,000 years of Christianity. The area is known for panoramic views over Skopje and the surrounding mountain landscape.</p></div></div>
+<div class="place featured"><img src="img/Matka-Canyon (1).jpg"/><div class="place-content"><h4>Matka Canyon</h4><p>Enjoy Matka Canyon, one of the most scenic natural attractions near Skopje. The area is known for dramatic cliffs, lake views, monasteries and optional boat rides through the canyon.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">05</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 05</span><h3>Skopje to Sofia, Bulgaria</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Sofia City</h4><p>Arrive in Sofia, Bulgaria’s capital, a city shaped by Greek, Roman, Ottoman and Soviet-era influences. The orientation introduces broad boulevards, historic churches and government buildings.</p></div></div>
+<div class="place featured"><img src="img/Alexander-Nevsky-Cathedral.jpg"/><div class="place-content"><h4>Alexander Nevsky Cathedral</h4><p>Visit the grand gold-domed Alexander Nevsky Cathedral, one of Sofia’s most famous landmarks. Its impressive exterior, icon-filled interior and Orthodox heritage make it a key highlight of Bulgaria.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Arena Armeec</h4><p>Pass by Arena Armeec, Sofia’s major indoor sports and event venue. It is included as a city reference point during the wider drive through the Bulgarian capital.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">06</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 06</span><h3>Sofia to Bucharest, Romania</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Bucharest</h4><p>Arrive in Bucharest, Romania’s capital and commercial centre. The city combines elegant boulevards, historic architecture, communist-era landmarks and a lively urban atmosphere.</p></div></div>
+<div class="place featured"><img src="img/Parliament-Palace (1).jpg"/><div class="place-content"><h4>Parliament Palace</h4><p>See the Palace of Parliament, one of Bucharest’s most striking landmarks. Built during Romania’s communist period, the massive structure reflects the scale and ambition of that era.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Revolution Square</h4><p>Visit Revolution Square, an important historic area connected to the events of 1989 and the fall of Nicolae Ceaușescu. It is a meaningful stop for understanding modern Romanian history.</p></div></div>
+<div class="place featured"><img src="img/Primaverii-Palace-House-of-Ceausescu (1).jpg"/><div class="place-content"><h4>Primaverii Palace</h4><p>Explore or view the former private residence of Nicolae and Elena Ceaușescu. The palace gives visitors a closer look at the lifestyle and political history of Romania’s communist leadership.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">07</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 07</span><h3>Bucharest Sightseeing</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Metropolitan Church</h4><p>Visit the Metropolitan Church area on Mitropoliei Hill, a key centre of Romanian Orthodox faith. The peaceful surroundings and religious architecture add cultural depth to the Bucharest sightseeing day.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Carol I Park</h4><p>Enjoy Carol I Park, a landscaped city park with monuments, walking paths and the eternal flame at the grave of the Unknown Soldier. It offers a quieter break within the capital.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">08</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 08</span><h3>Bucharest to Transylvania</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/PelesCastle-11-e1476847341607-1024x767.jpg.webp"/><div class="place-content"><h4>Peleș Castle</h4><p>Visit Peleș Castle in Sinaia, a Neo-Renaissance royal residence built for King Carol I. Its mountain setting, ornate rooms and fairytale architecture make it one of Romania’s most beautiful attractions.</p></div></div>
+<div class="place featured"><img src="img/Bran-Castle-Everything-you-need-to-know-1200x675.jpg"/><div class="place-content"><h4>Bran Castle / Dracula Castle</h4><p>Discover Bran Castle, widely associated with the Dracula legend. Beyond the myth, the castle offers medieval architecture, hilltop views and a strong connection to Transylvanian tourism.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Council Square, Brașov</h4><p>Walk through Council Square in Brașov, surrounded by colourful buildings, old streets and medieval charm. It is a pleasant stop for photos, cafés and a relaxed city atmosphere.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">09</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 09</span><h3>Brașov to Cluj-Napoca</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Rupea Fortress</h4><p>See Rupea Fortress, a medieval stronghold built by Transylvanian Saxons on a high basalt hill. The site adds a dramatic historical stop between Brașov and Cluj-Napoca.</p></div></div>
+<div class="place featured"><img src="img/Sighisoara.jpg"/><div class="place-content"><h4>Sighișoara</h4><p>Visit Sighișoara, one of Transylvania’s best-preserved historic towns and a UNESCO-listed destination. Its cobbled streets, towers and colourful houses create a classic medieval atmosphere.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">10</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 10</span><h3>Cluj-Napoca to Satu Mare</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Romania Scenic Drive</h4><p>Travel from Cluj-Napoca to Satu Mare through Romania’s countryside, passing regional towns and rural landscapes. This day is mainly a comfortable transfer with scenic views along the route.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Satu Mare Overnight</h4><p>Stay overnight in Satu Mare and relax before crossing towards Hungary. The stop keeps the route comfortable and balances the longer travel sections of the programme.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">11</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 11</span><h3>Satu Mare to Budapest, Hungary</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/Buda-Castle-Castle-Hill.jpg"/><div class="place-content"><h4>Buda Castle &amp; Castle Hill</h4><p>Explore Buda Castle and Castle Hill, the historic palace district overlooking the Danube. The area features museums, monuments, old streets and excellent viewpoints over Budapest.</p></div></div>
+<div class="place featured"><img src="img/Parliament-Buildings-and-Crown-Jewels.jpg"/><div class="place-content"><h4>Parliament Buildings</h4><p>Admire the Hungarian Parliament Building, Budapest’s magnificent Neo-Gothic landmark beside the Danube. It is one of the city’s most photographed sights and a highlight of the riverfront skyline.</p></div></div>
+<div class="place featured"><img src="img/Fishermans-Bast.jpg"/><div class="place-content"><h4>Fisherman's Bastion</h4><p>Visit Fisherman’s Bastion, a Neo-Romanesque terrace with towers and courtyards overlooking the Danube. It offers some of the finest views of Pest and the Parliament Building.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Stalin Monument Site</h4><p>See the historic site connected with Hungary’s 1956 Revolution and anti-Soviet protests. This stop gives context to Budapest’s modern political history and national memory.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">12</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 12</span><h3>Budapest Sightseeing</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Heroes' Square</h4><p>Visit Heroes’ Square, home to the Millennium Monument and statues of important Hungarian leaders. It is one of Budapest’s grand ceremonial spaces and a key city landmark.</p></div></div>
+<div class="place featured"><img src="img/.jpgDanube-river-cruise (1).jpg"/><div class="place-content"><h4>Danube River Cruise</h4><p>Enjoy a scenic Danube River cruise and view Budapest from the water. The route offers memorable perspectives of Buda Castle, Parliament, bridges and the illuminated riverfront.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Danube Promenade</h4><p>Walk along the Danube Promenade between Elisabeth Bridge and Széchenyi Chain Bridge. It is a relaxed riverside experience with classic views of Buda and Pest.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Gellért Hill</h4><p>Visit or view Gellért Hill, a panoramic hill above the Danube known for city views, monuments and nearby thermal-spring heritage. It is a rewarding photo stop in Budapest.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">13</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 13</span><h3>Slovenia</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Ljubljana</h4><p>Discover Ljubljana, Slovenia’s charming capital, known for its riverside old town, bridges, cafés and relaxed walking streets. The city offers a softer, elegant contrast after the larger capitals.</p></div></div>
+<div class="place featured"><img src="img/Ljubljana-Castle.jpg"/><div class="place-content"><h4>Ljubljana Castle</h4><p>Visit Ljubljana Castle on Castle Hill above the old town. The castle area gives excellent views across the city and introduces Slovenia’s medieval and cultural history.</p></div></div>
+<div class="place featured"><img src="img/Postojna-Cave.jpg"/><div class="place-content"><h4>Postojna Cave</h4><p>Experience Postojna Cave, one of Slovenia’s most famous natural attractions. Its underground train ride, vast chambers and dramatic rock formations make it a major highlight of the tour.</p></div></div>
+<div class="place featured"><img src="img/Predjama-Castle-1.jpg"/><div class="place-content"><h4>Predjama Castle</h4><p>See Predjama Castle, a spectacular fortress built into a cliff near Postojna. Its unusual setting and legendary stories make it one of Slovenia’s most memorable photo stops.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="day">
+<div class="dot">14</div>
+<div class="day-card">
+<div class="day-head"><span>DAY 14</span><h3>Venice, Italy Departure</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place-content"><h4>Venice Airport Transfer</h4><p>Check out and proceed towards Venice airport for the departure flight. The final transfer completes the route from Southern Italy through the Balkans, Central Europe and Slovenia back to Italy.</p></div>
+<div class="place text-only"><div class="place-content"><h4>Tour Complete</h4><p>Conclude the Eastern Europe Grand Tour with memories of historic cities, castles, churches, caves, river views and scenic drives across seven countries.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="details">
+<div class="section-title">
+<h2>Package Details</h2>
+<p>Inclusions, exclusions and important notes adapted for Skaria Tours.</p>
+</div>
+<div class="info-grid">
+<div class="info-box">
+<h3>Cost Includes</h3>
+<ul>
+<li>Night ferry Bari to Durrës</li>
+<li>Private A/C vehicle throughout the journey</li>
+<li>Mercedes Benz Vito or similar vehicle</li>
+<li>Driver accommodation and fuel charges</li>
+<li>Parking, motorway tolls and city permits</li>
+<li>12 nights accommodation with breakfast</li>
+</ul>
+</div>
+<div class="info-box">
+<h3>Entrance Not Included</h3>
+<ul>
+<li>The Millennium Cross</li>
+<li>Matka Canyon boat trip</li>
+<li>National Gallery for Foreign Art</li>
+<li>Romanian Parliament Building</li>
+<li>Primaverii Palace</li>
+<li>Carol I Park</li>
+<li>Peleș Castle</li>
+<li>Dracula Castle</li>
+<li>Danube River Cruise</li>
+</ul>
+</div>
+<div class="info-box">
+<h3>Cost Excludes</h3>
+<ul>
+<li>Airfare</li>
+<li>Visa charges</li>
+<li>Entrance fees unless specified</li>
+<li>Personal expenses</li>
+<li>Meals not specified</li>
+<li>Porterage and laundry</li>
+<li>Driver tips</li>
+</ul>
+</div>
+<div class="info-box">
+<h3>Please Note</h3>
+<ul>
+<li>Final inclusions and terms will be as per vouchers provided.</li>
+<li>Fair or event period supplements may apply.</li>
+<li>Vehicle usage is maximum 10 hours per day.</li>
+<li>Final time-wise itinerary approval is required before confirmation.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="cta">
+<h2>Book This Eastern Europe Tour</h2>
+<p>Contact Skaria Tours and Travels for price, dates and group availability.</p>
+<a class="btn" href="tel:+919999999999">Call Now</a>
+</div>
+</section>
+<footer>
+<p>© 2026 Skaria Tours and Travels. All Rights Reserved.</p>
+</footer>
+<script>
+  const animatedItems = document.querySelectorAll(".day-card, .stat, .info-box");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.12 });
+
+  animatedItems.forEach(item => {
+    item.style.opacity = "0";
+    item.style.transform = "translateY(28px)";
+    item.style.transition = "0.7s ease";
+    observer.observe(item);
+  });
+
+  const menuToggle = document.getElementById("menuToggle");
+  const siteMenu = document.querySelector(".site-menu");
+  const menuIcon = menuToggle ? menuToggle.querySelector("i") : null;
+
+  if (menuToggle && siteMenu && menuIcon) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = siteMenu.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      menuIcon.classList.toggle("fa-bars", !isOpen);
+      menuIcon.classList.toggle("fa-xmark", isOpen);
+    });
+
+    siteMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        siteMenu.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuIcon.classList.add("fa-bars");
+        menuIcon.classList.remove("fa-xmark");
+      });
+    });
+  }
+</script>
+</body>
+</html>

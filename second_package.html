@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>13N 14D 7 Country Rome to Paris | Skaria Tours</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fff7ed;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    .topbar {
+      background: #06423d;
+      color: #ffffff;
+      padding: 10px 6%;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .topbar-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-contact {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .topbar-contact span,
+    .topbar-social a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .topbar-social {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .topbar-social a {
+      color: #f59e0b;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 12px 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 28px rgba(6, 66, 61, 0.12);
+    }
+
+    .nav-wrap {
+      width: 100%;
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: 180px 1fr 170px;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 34px;
+    }
+
+    nav a {
+      color: #06423d;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      transition: .25s ease;
+    }
+
+    nav a:hover {
+      color: #f59e0b;
+    }
+
+    .nav-action {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-btn,
+    .btn {
+      background: linear-gradient(135deg, #2fb36f, #d6b23f);
+      color: #ffffff;
+      padding: 13px 30px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      display: inline-block;
+      box-shadow: 0 10px 24px rgba(47,179,111,.2);
+    }
+
+    .hero {
+      min-height: 680px;
+      background:
+        linear-gradient(110deg, rgba(4,24,55,.95), rgba(4,24,55,.35)),
+        url("https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 90px 6%;
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f59e0b;
+      color: #061a35;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 20px;
+      color: #f8fafc;
+      margin-bottom: 32px;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 46px);
+      color: #061a35;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 26px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .stat h3 {
+      color: #f59e0b;
+      font-size: 38px;
+    }
+
+    .route {
+      background: #061a35;
+      color: white;
+      border-radius: 34px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    .route h3 {
+      color: #f59e0b;
+      margin-bottom: 18px;
+      font-size: 26px;
+    }
+
+    .route-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .route-list span {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .itinerary {
+      display: grid;
+      gap: 34px;
+    }
+
+    .day-card {
+      background: white;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+      display: grid;
+      grid-template-columns: 310px 1fr;
+    }
+
+    .day-label {
+      background: linear-gradient(160deg, #061a35, #123b74);
+      color: white;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .day-label span {
+      color: #f59e0b;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .day-label h3 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .day-body {
+      padding: 34px;
+    }
+
+    .places {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .place {
+      background: #fffaf3;
+      border: 1px solid #f5d7ad;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+    .place:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0,0,0,.12);
+    }
+
+
+    .place.text-only {
+      background: linear-gradient(135deg, #fffaf3, #fff3df);
+      border-left: 5px solid #f59e0b;
+    }
+
+    .place.text-only .place-content {
+      padding: 24px;
+    }
+
+    .place.text-only .place-content h4::before {
+      content: "•";
+      color: #f59e0b;
+      margin-right: 8px;
+      font-size: 24px;
+      line-height: 0;
+    }
+
+    .place.featured .place-content h4::after {
+      content: "  Highlight";
+      display: inline-block;
+      margin-left: 8px;
+      background: #f59e0b;
+      color: #061a35;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      vertical-align: middle;
+      font-weight: 800;
+    }
+
+    .place img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .place-content {
+      padding: 20px;
+    }
+
+    .place-content h4 {
+      color: #061a35;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .place-content p {
+      color: #536174;
+      font-size: 15px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #061a35, #0d356d);
+      color: white;
+      text-align: center;
+      border-radius: 36px;
+      padding: 70px 25px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #dbeafe;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: #061a35;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 28px;
+    }
+
+    @media (max-width: 950px) {
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .topbar-contact {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .nav-wrap {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .nav-action {
+        justify-content: center;
+      }
+
+      .stats,
+      .places {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .day-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .stats,
+      .places {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .brand img {
+        width: 68px;
+        height: 68px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+    }
+
+
+    /* Full responsive improvements */
+    img { max-width: 100%; height: auto; }
+    .topbar-contact i { color: #f59e0b; margin-right: 6px; }
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: #06423d;
+      color: #fff;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1180px) {
+      .nav-wrap { grid-template-columns: 130px 1fr 150px; gap: 16px; }
+      nav { gap: 22px; }
+      nav a { font-size: 14px; }
+      .brand img { width: 74px; height: 74px; }
+      .hero h1 { font-size: clamp(38px, 6vw, 68px); }
+    }
+
+    @media (max-width: 900px) {
+      .topbar { padding: 9px 4%; }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar-contact { justify-content: center; gap: 10px 20px; }
+      .topbar-social { justify-content: center; }
+
+      header { padding: 10px 4%; }
+      .nav-wrap {
+        grid-template-columns: auto auto;
+        grid-template-areas:
+          "logo toggle"
+          "menu menu"
+          "action action";
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .brand { grid-area: logo; justify-self: start; }
+      .menu-toggle { display: inline-flex; grid-area: toggle; align-items: center; justify-content: center; justify-self: end; }
+      nav {
+        grid-area: menu;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: 0 12px 28px rgba(6,66,61,.12);
+      }
+      nav.active { display: flex; }
+      nav a {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        text-align: center;
+      }
+      nav a:hover { background: #fff7ed; }
+      .nav-action { grid-area: action; display: none; width: 100%; justify-content: center; }
+      .nav-action.active { display: flex; }
+      .nav-btn { width: min(260px, 100%); text-align: center; }
+
+      .hero { min-height: 560px; padding: 70px 5%; text-align: center; justify-content: center; }
+      .hero-content { margin: 0 auto; }
+      .hero p { margin-left: auto; margin-right: auto; font-size: 18px; }
+      section { padding: 65px 5%; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .day-card { grid-template-columns: 1fr; border-radius: 28px; }
+      .day-label { padding: 26px; text-align: center; }
+      .day-body { padding: 24px; }
+      .places { grid-template-columns: 1fr 1fr; }
+      .route { padding: 30px; }
+    }
+
+    @media (max-width: 640px) {
+      body { line-height: 1.65; }
+      .topbar { font-size: 12.5px; }
+      .topbar-contact { flex-direction: column; gap: 4px; }
+      .topbar-social a { font-size: 16px; }
+      .brand img { width: 64px; height: 64px; }
+      .menu-toggle { width: 42px; height: 42px; }
+
+      .hero { min-height: 500px; padding: 55px 5%; }
+      .badge { font-size: 13px; padding: 7px 14px; }
+      .hero h1 { font-size: clamp(32px, 11vw, 46px); line-height: 1.08; }
+      .hero p { font-size: 16px; }
+      .btn, .nav-btn { padding: 12px 22px; font-size: 14px; }
+
+      section { padding: 52px 5%; }
+      .section-title { margin-bottom: 34px; }
+      .section-title h2 { font-size: 30px; }
+      .section-title p { font-size: 15px; }
+      .stats, .places { grid-template-columns: 1fr; }
+      .stat { padding: 24px; border-radius: 22px; }
+      .route { padding: 24px; border-radius: 24px; }
+      .route-list { gap: 9px; }
+      .route-list span { font-size: 13px; padding: 8px 12px; }
+      .itinerary { gap: 24px; }
+      .day-card { border-radius: 24px; }
+      .day-label { padding: 22px 18px; }
+      .day-label h3 { font-size: 23px; }
+      .day-body { padding: 18px; }
+      .place { border-radius: 18px; }
+      .place img { height: 210px; }
+      .place-content, .place.text-only .place-content { padding: 18px; }
+      .place-content h4 { font-size: 18px; }
+      .place-content p { font-size: 14.5px; }
+      .place.featured .place-content h4::after { display: block; width: fit-content; margin: 7px 0 0; }
+      .cta { padding: 44px 18px; border-radius: 24px; }
+      .cta h2 { font-size: 30px; }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 29px; }
+      .section-title h2 { font-size: 27px; }
+      .place img { height: 180px; }
+      .route-list span { font-size: 12px; }
+    }
+
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-contact">
+      <span><i class="fa-solid fa-envelope"></i> kevinsabu@gmail.com</span>
+      <span><i class="fa-solid fa-phone"></i> +39 329 544 4806</span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fa-brands fa-square-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <img alt="Skaria Tours and Travels Logo" src="logo.png"/>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="packages.html">Tour Packages</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-action">
+      <a class="nav-btn" href="index.html#contact">Book Now</a>
+    </div>
+  </div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<span class="badge">13 Nights / 14 Days</span>
+<h1>7 Country Rome to Paris Tour</h1>
+<p>
+      A premium Europe pilgrimage and sightseeing journey covering Rome, Vatican,
+      Florence, Pisa, Venice, Slovenia, Austria, Germany, Switzerland and Paris.
+    </p>
+<a class="btn" href="#itinerary">View Full Itinerary</a>
+</div>
+</section>
+<section id="overview">
+<div class="section-title">
+<h2>Tour Overview</h2>
+<p>Explore Europe’s sacred churches, historical cities, mountain landscapes and world-famous landmarks.</p>
+</div>
+<div class="stats">
+<div class="stat"><h3>14</h3><p>Days</p></div>
+<div class="stat"><h3>13</h3><p>Nights</p></div>
+<div class="stat"><h3>7</h3><p>Countries</p></div>
+<div class="stat"><h3>30+</h3><p>Attractions</p></div>
+</div>
+<div class="route">
+<h3>Important Destinations</h3>
+<div class="route-list">
+<span>Rome</span>
+<span>Vatican</span>
+<span>Florence</span>
+<span>Pisa</span>
+<span>Venice</span>
+<span>Postojna</span>
+<span>Salzburg</span>
+<span>Munich</span>
+<span>Lucerne</span>
+<span>Titisee</span>
+<span>Interlaken</span>
+<span>Paris</span>
+</div>
+</div>
+</section>
+<section id="itinerary">
+<div class="section-title">
+<h2>Full Itinerary</h2>
+<p>Rome to Paris European tour program redesigned for Skaria Tours and Travels.</p>
+</div>
+<div class="itinerary">
+<article class="day-card">
+<div class="day-label"><span>DAY 01</span><h3>Rome, Italy</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Arrival in Rome</h4><p>Begin the tour in Rome, the Eternal City, where ancient history, Christian heritage and Italian culture come together. After arrival, travelers settle into the journey with a comfortable transfer and an introduction to the city’s timeless atmosphere, from historic streets to impressive basilicas and monuments.</p></div></div>
+<div class="place featured"><img src="9img/Castel-SantAngelo.jpg"/><div class="place-content"><h4>Castel Sant'Angelo</h4><p>A striking riverside fortress close to Vatican City, Castel Sant’Angelo has served as a mausoleum, papal refuge and military stronghold through different periods of Roman history. Its architecture and location beside the Tiber make it one of Rome’s most atmospheric landmarks and a memorable introduction to the city.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Monument to Garibaldi</h4><p>This monument honors Giuseppe Garibaldi, one of the key figures in Italian unification. Set in a scenic area with wide city views, it adds a strong historical note to the Rome sightseeing program and offers travelers a peaceful stop for photos and reflection.</p></div></div>
+<div class="place featured"><img src="img/Holy-Stairs-Scala-Santa.jpg"/><div class="place-content"><h4>Holy Stairs / Scala Santa</h4><p>The Holy Stairs are among Rome’s most meaningful devotional sites, traditionally associated with the Passion of Christ. Pilgrims visit this sacred place for prayer and reflection, making it an important spiritual experience within the Rome section of the tour.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 02</span><h3>Rome and Vatican</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Basilica of the Holy Cross</h4><p>This basilica is connected with important Christian relics and has long been visited by pilgrims seeking a deeper spiritual experience in Rome. Its quiet atmosphere, religious importance and historic setting make it a meaningful stop during the pilgrimage-focused part of the journey.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>St. John Lateran Basilica</h4><p>St. John Lateran is one of Rome’s major papal basilicas and holds great importance in Catholic tradition. Its grand interior, sacred history and role as the cathedral church of Rome make it a powerful destination for pilgrims and visitors interested in Christian heritage.</p></div></div>
+<div class="place featured"><img src="img/The-Vatican-Museums.jpg"/><div class="place-content"><h4>Vatican Museums</h4><p>The Vatican Museums contain one of the world’s richest collections of religious art, classical sculpture, galleries and historic treasures. Visitors experience centuries of culture and faith through beautifully decorated halls, priceless masterpieces and the artistic legacy of Vatican City.</p></div></div>
+<div class="place featured"><img src="img/The-Sistine-Chapel.jpg"/><div class="place-content"><h4>Sistine Chapel</h4><p>The Sistine Chapel is one of the most revered spaces in Vatican City, admired for its sacred atmosphere and Renaissance art. Its ceiling and altar wall are world-famous, making this a highlight for travelers who appreciate faith, history and artistic beauty.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 03</span><h3>Rome City Tour</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Trevi Fountain</h4><p>Trevi Fountain is one of Rome’s most loved landmarks, famous for its dramatic Baroque design, flowing water and lively piazza setting. It is a perfect place for photographs and for experiencing the romantic charm of the old city.</p></div></div>
+<div class="place featured"><img src="img/The-Pantheon.jpg"/><div class="place-content"><h4>Pantheon</h4><p>The Pantheon is a masterpiece of ancient Roman architecture, especially admired for its massive dome and central opening. Still standing after nearly two thousand years, it gives visitors a powerful sense of Rome’s engineering brilliance and historic continuity.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Catacombs</h4><p>The Roman Catacombs offer a glimpse into early Christian history through underground burial passages and sacred spaces. This visit adds depth to the pilgrimage theme, helping travelers understand the courage, faith and traditions of the early Church communities.</p></div></div>
+<div class="place featured"><img src="img/The-St.-Paul-outside-the-Walls-Papal-Basilica.jpg"/><div class="place-content"><h4>St. Paul Outside the Walls</h4><p>This major papal basilica is dedicated to Saint Paul and is one of Rome’s most important Christian pilgrimage churches. Its vast interior, peaceful cloisters and spiritual importance make it a deeply meaningful stop for prayer and reflection.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 04</span><h3>Florence and Pisa</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/Cathedral-of-Santa-Maria-del-Fiore-and-Piazza-Duomo.jpg"/><div class="place-content"><h4>Santa Maria del Fiore</h4><p>Florence’s cathedral, Santa Maria del Fiore, is one of Italy’s greatest architectural treasures. Its grand dome, marble façade and central location reveal the artistic brilliance of the Renaissance and make it a major highlight of the Florence visit.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Piazzale Michelangelo</h4><p>Piazzale Michelangelo is a famous viewpoint offering sweeping views across Florence, the Arno River and the city’s historic skyline. It is an excellent photo stop and a relaxing place to admire the beauty of Tuscany’s capital.</p></div></div>
+<div class="place featured"><img src="img/Leaning-Tower-of-Pisa-Italy.webp"/><div class="place-content"><h4>Leaning Tower of Pisa</h4><p>The Leaning Tower of Pisa is one of Europe’s most recognizable monuments and a classic Italian highlight. Located in the Piazza dei Miracoli, it is surrounded by beautiful religious buildings and provides one of the most memorable photo opportunities of the tour.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Tuscany Drive</h4><p>The drive through Tuscany adds a scenic countryside experience between Florence and Pisa. Rolling landscapes, charming towns and classic Italian views make the journey itself an enjoyable part of the day, especially for travelers who love relaxed road scenery.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 05</span><h3>Padua and Venice</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/Padua-St-Antonys-church.jpg"/><div class="place-content"><h4>Padua St. Anthony's Church</h4><p>The Basilica of Saint Anthony in Padua is a renowned pilgrimage destination visited by devotees from around the world. Its sacred atmosphere, beautiful chapels and connection to Saint Anthony make it one of the most spiritually important stops on the itinerary.</p></div></div>
+<div class="place featured"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Venice Island</h4><p>Venice Island offers a magical experience of canals, bridges, narrow lanes and historic waterfront views. The floating-city atmosphere is unlike anywhere else in Europe, making Venice one of the most memorable and photogenic destinations on the route.</p></div></div>
+<div class="place featured"><img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Piazza San Marco</h4><p>Piazza San Marco is the heart of Venice, surrounded by grand architecture and famous landmarks. The square captures the elegance of the old Venetian Republic and gives travelers time to enjoy the city’s cultural charm, cafés, basilica views and lively atmosphere.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Gondola Ride Optional</h4><p>The optional gondola ride offers a classic Venice experience through quiet canals and under historic bridges. It is ideal for travelers who want a romantic and traditional view of the city from the water.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 06</span><h3>Postojna, Slovenia</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/Postojana-cave.jpg"/><div class="place-content"><h4>Postojna Cave</h4><p>Postojna Cave is one of Slovenia’s most famous natural attractions, known for its underground passages, dramatic rock formations and cave-train experience. It gives travelers a completely different landscape experience after the city-focused Italian portion of the tour.</p></div></div>
+<div class="place featured"><img src="img/Predjama-Castle.jpg"/><div class="place-content"><h4>Predjama Castle</h4><p>Predjama Castle is a remarkable fortress built into a cave cliff, creating one of Europe’s most unusual castle settings. Its dramatic location and medieval character make it a strong visual highlight of the Slovenia visit.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 07</span><h3>Salzburg, Austria</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Salzburg City</h4><p>Salzburg is a beautiful Austrian city known for music, baroque architecture, old streets and alpine surroundings. The city offers a graceful mix of culture and scenery, making it a pleasant stop between Slovenia and Germany.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Alpine Route</h4><p>The alpine route through Austria gives travelers scenic mountain views, green valleys and peaceful countryside landscapes. This journey adds a relaxing nature element to the tour and offers many memorable views from the road.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 08</span><h3>Munich, Germany</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Munich City Tour</h4><p>Munich introduces travelers to Bavaria’s cultural capital, with old squares, elegant buildings, churches and a lively urban atmosphere. The city tour gives a quick but enjoyable look at Germany’s heritage, architecture and clean city planning.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>German Heritage</h4><p>This portion of the journey highlights Germany’s organized cities, cultural traditions and historic character. It serves as a gentle transition from the alpine landscapes toward the Swiss and Black Forest sections of the tour.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 09</span><h3>Lucerne, Switzerland</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="img/Titisee-Lake-Germany.jpg"/><div class="place-content"><h4>Lucerne</h4><p>Lucerne is one of Switzerland’s most charming cities, known for its lake, mountain backdrop, wooden bridge, old town and peaceful Swiss atmosphere. It is a major scenic highlight and a beautiful place for relaxed sightseeing and photography.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Swiss Lake Views</h4><p>The lake views around Lucerne showcase Switzerland’s calm natural beauty, with clear waters framed by alpine peaks. This stop allows travelers to enjoy the slower, peaceful side of Switzerland after several busy sightseeing days.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 10</span><h3>Titisee, Germany</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Titisee</h4><p>Titisee is a scenic lake in Germany’s Black Forest region, popular for its calm water, lakeside walks, shops and cafés. The destination combines natural beauty with the relaxed charm of a traditional German holiday town.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Black Forest</h4><p>The Black Forest is known for dense woodland, traditional villages, cuckoo clocks and peaceful countryside scenery. It gives travelers a refreshing nature break and a taste of one of Germany’s most beloved regions.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 11</span><h3>Interlaken, Switzerland</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Interlaken</h4><p>Interlaken is a famous Swiss resort town located between Lake Thun and Lake Brienz, surrounded by dramatic alpine peaks. It is a major highlight for mountain views, Swiss scenery and optional adventure experiences.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Swiss Alps Experience</h4><p>This experience focuses on the beauty of Switzerland’s alpine landscapes, including mountain backdrops, clean streets and peaceful surroundings. It is perfect for photography and for enjoying the calm charm of Swiss travel.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 12</span><h3>Paris, France</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Arrival in Paris</h4><p>Arrive in Paris, the City of Lights, known for elegance, culture, fashion, monuments and romantic city views. This day gives travelers a relaxed introduction before the main sightseeing program begins.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Evening Paris</h4><p>Evening in Paris brings a special charm as monuments, bridges and avenues begin to glow. It is a lovely time to enjoy the atmosphere of the city, take photos and experience Paris at a slower pace.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 13</span><h3>Paris City Tour</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place featured"><img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/><div class="place-content"><h4>Eiffel Tower</h4><p>The Eiffel Tower is the most famous symbol of Paris and one of the world’s most recognized landmarks. Whether admired from the ground or visited for panoramic views, it is the unforgettable highlight of the Paris city tour.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Paris Landmarks</h4><p>Paris sightseeing includes elegant boulevards, historic bridges, monuments and beautiful city views. This stop gives travelers a broader impression of the French capital beyond a single attraction.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Church Visit</h4><p>A church visit in Paris provides time for prayer, quiet reflection and appreciation of sacred architecture. It continues the pilgrimage character of the tour while allowing travelers to experience the spiritual side of the city.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Paris Shopping Time</h4><p>Shopping time in Paris gives travelers a chance to explore local stores, souvenir shops and fashionable streets at a relaxed pace. It is also a good opportunity for photos, cafés and free time before departure.</p></div></div>
+</div>
+</div>
+</article>
+<article class="day-card">
+<div class="day-label"><span>DAY 14</span><h3>Departure</h3></div>
+<div class="day-body">
+<div class="places">
+<div class="place text-only"><div class="place-content"><h4>Final Memories</h4><p>The final day is a time to look back on the journey from Rome to Paris, covering sacred churches, historic cities, alpine landscapes and world-famous landmarks. Travelers depart with lasting memories of Europe’s faith, culture and scenery.</p></div></div>
+<div class="place text-only"><div class="place-content"><h4>Airport Transfer</h4><p>After completing the 13-night, 14-day Europe tour, proceed to the airport for the return journey. The transfer is arranged for a comfortable conclusion to the program, allowing travelers to end the tour smoothly and peacefully.</p></div></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section id="contact">
+<div class="cta">
+<h2>Book This Europe Tour</h2>
+<p>Contact Skaria Tours and Travels for package cost, travel dates and group booking availability.</p>
+<a class="btn" href="tel:+393295444806">Call Now</a>
+</div>
+</section>
+<footer>
+<p>© 2026 Skaria Tours and Travels. All Rights Reserved.</p>
+</footer>
+<script>
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+  const navAction = document.querySelector(".nav-action");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("active");
+      if (navAction) navAction.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      const icon = menuToggle.querySelector("i");
+      if (icon) {
+        icon.classList.toggle("fa-bars", !isOpen);
+        icon.classList.toggle("fa-xmark", isOpen);
+      }
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("active");
+        if (navAction) navAction.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        const icon = menuToggle.querySelector("i");
+        if (icon) {
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
+        }
+      });
+    });
+  }
+
+  const cards = document.querySelectorAll(".day-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.12 });
+
+  cards.forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(28px)";
+    card.style.transition = "0.7s ease";
+    observer.observe(card);
+  });
+</script>
+</body>
+</html>
